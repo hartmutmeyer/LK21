@@ -1,0 +1,38 @@
+package ${enclosing_package};
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Graphics;
+import hilfe.*;
+
+public class ${primary_type_name} extends HJFrame {
+    // globale Variablen
+	private static final int WIDTH = 500;
+	private static final int HEIGHT = 500;
+	private static final Color BACKGROUND = Color.WHITE;
+	private static final Color FOREGROUND = Color.BLACK;
+	
+    public ${primary_type_name}(final String title) {
+    	super(WIDTH, HEIGHT, BACKGROUND, FOREGROUND, title);
+        // eigene Initialisierung
+        ${cursor}
+    }
+
+	@Override
+	public void myPaint(Graphics g) {
+		// wird aufgerufen, wenn das Fenster neu gezeichnet wird
+
+	}
+	
+    public static void main(final String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					${primary_type_name} anwendung = new ${primary_type_name}("${primary_type_name}");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+    }
+}
