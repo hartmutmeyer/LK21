@@ -6,36 +6,35 @@ import javax.swing.Timer;
 
 import hilfe.*;
 
-public class LichterketteAnwendung extends HJFrame {
+public class AmpelAnwendung extends HJFrame {
 	// globale Variablen
-	private static final int WIDTH = 600;
-	private static final int HEIGHT = 350;
+	private static final int WIDTH = 500;
+	private static final int HEIGHT = 500;
 	private static final Color BACKGROUND = Color.WHITE;
 	private static final Color FOREGROUND = Color.BLACK;
-	Lichterkette vonREAL = new Lichterkette(50, 20);
-	Lichterkette vonPenny = new Lichterkette(20, 200);
-	Timer Zeit = new Timer(1000, this);
+	private Ampel ampel;
 
-	public LichterketteAnwendung(final String title) {
+	public AmpelAnwendung(final String title) {
 		super(WIDTH, HEIGHT, BACKGROUND, FOREGROUND, title);
 		// eigene Initialisierung
-		Zeit.start();
-		vonREAL.zustand(2);
+		ampel = new Ampel(200, 200);
+		Timer timer = new Timer(2000, this);
+		timer.start();
 	}
 
 	@Override
 	public void myPaint(Graphics g) {
 		// wird aufgerufen, wenn das Fenster neu gezeichnet wird
-		vonREAL.zeichnen(g);
-		vonPenny.zeichnen(g);
+		ampel.umschalten();
+		ampel.zeichnen(g);
 	}
 
 	public static void main(final String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
-					LichterketteAnwendung anwendung = new LichterketteAnwendung(
-							"LichterketteAnwendung");
+					AmpelAnwendung anwendung = new AmpelAnwendung("AmpelAnwendung");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

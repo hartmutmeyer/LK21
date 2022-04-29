@@ -1,46 +1,58 @@
-package ampel;
-
 import java.awt.*;
 
 public class Ampel {
-	Lampe rot, grün, gelb;
-	int xPos, yPos;
-	int state = 3;
+	private Lampe rot, gruen, gelb;
+	private int xPos, yPos;
+	private final static int GRUEN = 0;
+	private final static int GELB = 1;
+	private final static int ROT = 2;
+	private final static int GELBROT = 3;
+	private int zustand = GELB;
 
 	public Ampel(int x, int y) {
 		xPos = x;
 		yPos = y;
-		rot = new Lampe(Color.RED, xPos + 5, yPos + 5);
-		gelb = new Lampe(Color.YELLOW, xPos + 5, yPos + 27);
-		grün = new Lampe(Color.GREEN, xPos + 5, yPos + 50);
+		rot = new Lampe(xPos + 10, yPos + 10, Color.RED);
+		gelb = new Lampe(xPos + 10, yPos + 50, Color.YELLOW);
+		gruen = new Lampe(xPos + 10, yPos + 90, Color.GREEN);
+		rot.aus();
+		gelb.aus();
+		gruen.aus();
 	}
 
 	public void umschalten() {
-		state = (state + 1) % 4;
-		switch (state) {
-		case 0:
+		switch (zustand) {
+		case GRUEN:
+			zustand = GELB;
+			rot.aus();
+			gelb.an();
+			gruen.aus();
+			break;
+		case GELB:
+			zustand = ROT;
 			rot.an();
 			gelb.aus();
+			gruen.aus();
 			break;
-		case 1:
+		case ROT:
+			zustand = GELBROT;
+			rot.an();
 			gelb.an();
+			gruen.aus();
 			break;
-		case 2:
+		case GELBROT:
+			zustand = GRUEN;
 			rot.aus();
 			gelb.aus();
-			grün.an();
-			break;
-		case 3:
-			grün.aus();
-			gelb.an();
-			break;
+			gruen.an();
 		}
 	}
 
 	void zeichnen(Graphics g) {
-		g.fillRect(xPos, yPos, 30, 75);
+		g.setColor(Color.BLACK);
+		g.fillRect(xPos, yPos, 50, 130);
 		rot.zeichnen(g);
 		gelb.zeichnen(g);
-		grün.zeichnen(g);
+		gruen.zeichnen(g);
 	}
 }

@@ -5,7 +5,7 @@ public class Lampe {
 	private int x;
 	private int y;
 	private Color f;
-	final int BREITE = 100;
+	private final static int BREITE = 30;
 	private boolean isOn = true;
 
 	public Lampe(int e, int r, Color t) {
@@ -38,7 +38,6 @@ public class Lampe {
 			g.setColor(Color.GRAY);
 		}
 		g.fillOval(x, y, BREITE, BREITE);
-
 	}
 
 }
