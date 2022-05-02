@@ -1,0 +1,425 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0053)http://www.mathematische-basteleien.de/gameoflife.htm -->
+<HTML><HEAD><TITLE>Game of Life</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="Jürgen Köller" name=Author>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR>
+<META content="Gesammeltes über das Game of Life" name=Description>
+<META content="Game of Life, Lebensspiel" name=KeyWords></HEAD>
+<BODY text=#000000 vLink=#551a8b aLink=#ff0000 link=#0000ee 
+bgColor=#ffffcc>&nbsp; 
+<CENTER>
+<TABLE cellSpacing=0 cols=1 cellPadding=0 width="79%" bgColor=#ffffff 
+  border=0><TBODY>
+  <TR>
+    <TD><A name=top></A>
+      <TABLE cols=1 width="100%" bgColor=#99ff99 border=1>
+        <TBODY>
+        <TR>
+          <TD>
+            <CENTER><FONT color=#000000><FONT size=+3>Game of 
+            Life</FONT></FONT></CENTER></TD></TR></TBODY></TABLE>
+      <TABLE cols=1 width="100%" bgColor=#ffcc99 border=1>
+        <TBODY>
+        <TR>
+          <TD>
+            <CENTER>Inhalt dieser Webseite</CENTER>
+            <TABLE cellSpacing=0 cols=2 cellPadding=0 width="100%" 
+            bgColor=#ffcc99 border=0>
+              <TBODY>
+              <TR>
+                <TD>Was ist Game of Life? <BR><A 
+                  href="http://www.mathematische-basteleien.de/gameoflife.htm#Regeln">Regeln</A> 
+                  <BR><A 
+                  href="http://www.mathematische-basteleien.de/gameoflife.htm#Anwendung auf das Beispiel">Anwendung 
+                  auf das Beispiel&nbsp;</A> <BR><A 
+                  href="http://www.mathematische-basteleien.de/gameoflife.htm#Computereinsatz">Computereinsatz</A> 
+                  <BR><A 
+                  href="http://www.mathematische-basteleien.de/gameoflife.htm#Stillleben">Stillleben</A> 
+                  <BR><A 
+                  href="http://www.mathematische-basteleien.de/gameoflife.htm#Oszillatoren">Oszillatoren</A></TD>
+                <TD><A 
+                  href="http://www.mathematische-basteleien.de/gameoflife.htm#Bewegung">Bewegung</A> 
+                  <BR><A 
+                  href="http://www.mathematische-basteleien.de/gameoflife.htm#Populationen mit einer Geschichte">Populationen 
+                  mit einer Geschichte&nbsp;</A> <BR><A 
+                  href="http://www.mathematische-basteleien.de/gameoflife.htm#Selbstgemachte Populationen">Selbstgemachte 
+                  Populationen</A> <BR><A 
+                  href="http://www.mathematische-basteleien.de/gameoflife.htm#Game of Life im Internet">Game 
+                  of Life im Internet</A> <BR><FONT color=#000000><A 
+                  href="http://www.mathematische-basteleien.de/gameoflife.htm#Kommentar">Kommentar</A></FONT> 
+                  <BR><FONT 
+        color=#ffcc99>...</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cols=1 width="100%" bgColor=#ffcc99 border=1>
+        <TBODY>
+        <TR>
+          <TD>
+            <CENTER><A 
+            href="http://www.mathematische-basteleien.de/index.htm">Zurück zu 
+            Jürgen Köllers Homepage</A><B>&nbsp;&nbsp;</B>&nbsp;&nbsp; 
+            "Mathematische Basteleien"</CENTER></TD></TR></TBODY></TABLE>
+      <P><B>Was ist Game of Life?&nbsp;</B> <BR>Das Game of Life (Lebensspiel) 
+      ist eine Computersimulation. Lebewesen verteilen sich auf einem 
+      unbegrenzten Feld quadratischer Zellen. Je nach Nachbarschaft bleiben sie 
+      am Leben, sterben oder bringen neues Leben hervor. 
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD>
+            <CENTER><IMG height=91 src="Game_of_Life-Dateien/game01.gif" 
+            width=315></CENTER></TD></TR></TBODY></TABLE>Im Beispiel geht man von 
+      einer Population von 7 Lebewesen aus. Sie vermehren sich bis auf 12 und 
+      sterben nach 6 Generationen aus. 
+      <P>Game of Life kann auch als zellulärer Automat angesehen werden, bei dem 
+      der Zustand einer Zelle vom eigenen Zustand und von dem der Nachbarzellen 
+      abhängt.&nbsp; 
+      <P>Das Spiel wurde 1970 vom englischen Mathematikprofessor John Conway 
+      entwickelt. <BR>
+      <HR width="100%" SIZE=3>
+
+      <P><A name=Regeln></A><B>Regeln&nbsp;&nbsp;&nbsp; </B><FONT 
+      color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+      <BR><FONT color=#000000>Jede neue Generation wird nach einer 
+      Überlebensregel (I), einer Sterberegel (II) und einer Geburtsregel (III) 
+      ermittelt.</FONT> <BR>&nbsp; 
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD><FONT color=#ffffff>....<IMG height=31 
+            src="Game_of_Life-Dateien/game02.gif" width=31>....</FONT></TD>
+          <TD>Eine Zelle a ist entweder von einem Lebewesen besetzt oder 
+            nicht.&nbsp; Welchen Zustand sie in der nächsten Generation hat, 
+            hängt von der Besetzung der acht Nachbarzellen 
+      ab.</TD></TR></TBODY></TABLE>
+      <P>1. Fall: Die Zelle a ist besetzt.&nbsp; <BR>(I) Das Lebewesen in dieser 
+      Zelle überlebt, wenn es 2 oder 3 Nachbarn hat.&nbsp; <BR>(II) Das 
+      Lebewesen stirbt, wenn es 0, 1, 4, 5, 6, 7 oder 8 Nachbarn hat.&nbsp; 
+      <BR>(Bei keinem oder einem Nachbarn stirbt es aus Einsamkeit, bei 4 bis 8 
+      wegen Überbevölkerung.) 
+      <P>2.Fall: Die Zelle a ist nicht besetzt.&nbsp; <BR>(III) Gibt es zu 
+      dieser Zelle genau 3 Lebewesen in den Nachbarzellen, so entsteht hier ein 
+      neues Lebewesen. In allen anderen Konstellationen bleibt sie leer. <BR>
+      <HR width="100%" SIZE=3>
+
+      <P><A name="Anwendung auf das Beispiel"></A><B>Anwendung auf das Beispiel 
+      </B><FONT color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD>
+            <CENTER><IMG height=98 src="Game_of_Life-Dateien/game03.gif" 
+            width=382></CENTER></TD></TR></TBODY></TABLE>Auf diese Weise kann man zu 
+      jeder Population schrittweise die nachfolgende Generation ermitteln. Es 
+      genügen Bleistift, kariertes Papier und Radiergummi. Natürlich ist es 
+      besser, die vielen stupiden Denkschritte einem Computer zu überlassen. 
+<BR>
+      <HR width="100%" SIZE=3>
+
+      <P><A name=Computereinsatz></A><B>Computereinsatz&nbsp;&nbsp; </B><FONT 
+      color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD><FONT color=#ffffff>...<IMG height=93 
+            src="Game_of_Life-Dateien/game04.gif" width=93>...</FONT></TD>
+          <TD>In den siebziger und achtziger Jahren haben sich viele 
+            Computernutzer mit diesem Spiel beschäftigt und ein Programm 
+            geschrieben (links). Wegen der hohen Auflösung und vor allem wegen 
+            der Schnelligkeit heutiger Computer hat das Lebensspiel&nbsp; eine 
+            neue Qualität erhalten.&nbsp;</TD></TR></TBODY></TABLE>Will man das Spiel 
+      des Lebens kennenlernen, sollte man sich z.B. aus dem Internet ein 
+      Programm besorgen (siehe Linkliste) und damit experimentieren.&nbsp; <BR>
+      <HR width="100%" SIZE=3>
+
+      <P><A name=Stillleben></A><B>Stillleben </B><FONT color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD><IMG height=119 src="Game_of_Life-Dateien/game16.gif" 
+            width=232><FONT color=#ffffff>...</FONT></TD>
+          <TD>Im Anfangsbeispiel oben verschwand die ausgesetze Population 
+            nach 6 Generationen.&nbsp; 
+            <P>Bei anderen Ausgangskonstellationen bleiben meist zum Schluss 
+            stabile Populationen (und "Blinker") 
+      zurück.&nbsp;</P></TD></TR></TBODY></TABLE>
+      <HR width="100%" SIZE=1>
+      <BR>Die stabilen Populationen enthalten nur Lebewesen mit 2 oder 3 
+      Nachbarn und ändern sich nicht mehr. Sie heißen nach Conway Stillleben 
+      (still lifes).&nbsp; <BR>Hier ist eine Darstellung einiger bekannter 
+      Stillleben.&nbsp; 
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD>
+            <CENTER><IMG height=191 src="Game_of_Life-Dateien/game05.gif" 
+            width=281></CENTER></TD></TR></TBODY></TABLE>Populationen mit wenigen 
+      Lebewesen sind erforscht. Wer sie gefunden hatte, durfte ihnen einen Namen 
+      geben.&nbsp; <BR>
+      <HR width="100%" SIZE=3>
+
+      <P><A name=Oszillatoren></A><B>Oszillatoren&nbsp;&nbsp; </B><FONT 
+      color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD><FONT color=#ffffff>...<IMG height=31 
+            src="Game_of_Life-Dateien/game06_1.gif" width=31>...</FONT></TD>
+          <TD>Eine andere auffällige Population ist der Blinker. Er besteht 
+            aus drei Lebewesen, die abwechselnd übereinander oder nebeneinander 
+            liegen.&nbsp;</TD></TR></TBODY></TABLE>Er gehört zu den 
+      Periode-2-Oszillatoren (periodic 2 oszillators, p2).&nbsp; <BR>
+      <HR width="100%" SIZE=1>
+      <BR>Hier ist eine Zusammenstellung bekannter p2-Populationen: 
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD>
+            <CENTER><IMG height=161 src="Game_of_Life-Dateien/game06.gif" 
+            width=331></CENTER></TD></TR></TBODY></TABLE>
+      <HR width="100%" SIZE=1>
+      <BR>Die Perioden können auch größer als 2 sein: 
+      <TABLE cellSpacing=0 cols=2 cellPadding=0 width="100%" bgColor=#ffffff 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <CENTER><IMG height=101 src="Game_of_Life-Dateien/game07.gif" 
+            width=101></CENTER></TD>
+          <TD>
+            <CENTER><IMG height=30 src="Game_of_Life-Dateien/game08.gif" 
+            width=82></CENTER></TD></TR></TBODY></TABLE>Links ein Periode-3-Oszillator 
+      (p3), das Kreuz (cross), rechts ein Periode-60-Oszillator in Aktion (p60). 
+      <BR>
+      <HR width="100%" SIZE=3>
+
+      <P><A name=Bewegung></A><B>Bewegung&nbsp;&nbsp; </B><FONT color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+
+      <P><FONT color=#000000>Gleiter</FONT> 
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD><FONT color=#ffffff>...<IMG height=41 
+            src="Game_of_Life-Dateien/game09.gif" width=41>...</FONT></TD>
+          <TD>Es gibt merkwürdige Gebilde, die sich diagonal auf dem Feld 
+            bewegen. Sie bringen ein interessantes Moment in die Abfolge der 
+            Generationen. Die "Gleiter" bestehen in jeder Phase aus 5 Lebewesen 
+            und haben die "Periode" 4.</TD></TR></TBODY></TABLE>
+      <HR width="100%" SIZE=1>
+      <BR>Gleiterquelle&nbsp;<B>&nbsp; </B><FONT color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD><IMG height=44 src="Game_of_Life-Dateien/game10.gif" 
+width=90></TD>
+          <TD>Das ist schon höhere "Game of Life"-Wissenschaft: Im Bild links 
+            steht eine unscheinbare Anordnung von Lebewesen. Verfolgt man die 
+            nachfolgenden Generationen, so werden gleichmäßig Gleiter auf die 
+            Reise geschickt.&nbsp;</TD>
+          <TD><A 
+            href="http://www.mathematische-basteleien.de/gameoflife.htm#top"><IMG 
+            height=45 src="Game_of_Life-Dateien/game11.gif" width=86 
+            align=absBottom border=1></A></TD></TR></TBODY></TABLE>Nach jeweils 30 
+      Generationen wiederholen sich die Bilder.&nbsp; <BR>In (amerikanischem) 
+      Englisch heißt diese Anordnung "glider gun". <BR>
+      <HR width="100%" SIZE=1>
+      <BR>Eater<B>&nbsp; </B><FONT color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD><FONT color=#ffffff>...<IMG height=41 
+            src="Game_of_Life-Dateien/game12.gif" 
+          width=41>...einer&nbsp;</FONT></TD>
+          <TD>Links steht ein "Fresser", der gleichzeitig ein Stillleben ist. 
+            Trifft ein Gleiter an einer bestimmten Stelle und in einer 
+            bestimmten Phase auf ihn, so geht der Eater ungeschoren aus dem 
+            Zusammenprall hervor. Der Gleiter stirbt.</TD>
+          <TD><FONT color=#ffffff>...<IMG height=29 
+            src="Game_of_Life-Dateien/game13.gif" 
+        width=29>...</FONT></TD></TR></TBODY></TABLE>
+      <HR width="100%" SIZE=1>
+      <BR>Spaceships<B>&nbsp; </B><FONT color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD><FONT color=#ffffff>...<IMG height=141 
+            src="Game_of_Life-Dateien/game14.gif" width=71>...</FONT></TD>
+          <TD>Auch "Raumschiffe" bewegen sich. Es gibt sie in drei Größen: Sie 
+            heißen lightweight spaceship, middleweight spaceship und heavyweight 
+            spaceship, abgekürzt LWWS, MWSS und HWWS.&nbsp; 
+            <P>Die Populationen erinnern sowohl im statischen Zustand als auch 
+            in der Bewegung mehr an Vögel als an Raumschiffe.</P></TD>
+          <TD><FONT color=#ffffff>...<IMG height=56 
+            src="Game_of_Life-Dateien/game14_2.gif" width=24 
+          border=1>...</FONT></TD></TR></TBODY></TABLE>
+      <HR width="100%" SIZE=1>
+      <BR>Dreier-Crash&nbsp;<B>&nbsp; </B><FONT color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD><FONT color=#ffffff>...<IMG height=101 
+            src="Game_of_Life-Dateien/game21.gif" width=71>...</FONT></TD>
+          <TD>Drei Gleiter bewegen sich aufeinander zu, stoßen zusammen und 
+            dann?</TD></TR></TBODY></TABLE>
+      <HR width="100%" SIZE=3>
+
+      <P><A name="Populationen mit einer Geschichte"></A><B>Populationen mit 
+      einer Geschichte&nbsp; </B><FONT color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+      <BR>Eine beliebte Beschäftigung ist die Entdeckung von Populationen mit 
+      interessanten Verläufen. Populationen mit wenigen Lebewesen sind erforscht 
+      und katalogisiert. 
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD><FONT color=#ffffff>...<IMG height=31 
+            src="Game_of_Life-Dateien/game15.gif" width=31>...</FONT></TD>
+          <TD>Eine bekannte Population dieser Art hat die Form eines 
+            F-Pentominos. Sie hat eine bewegte Entwicklung:&nbsp; 
+            <P>Stillleben und Blinker entstehen, werden wieder aufgesogen und 
+            bilden sich erneut. Insgesamt 6 Gleiter entfernen sich auf 
+            Nimmerwiedersehn. Am Ende bleibt nach 1102 Generationen eine 
+            Population mit 15 Stillleben und 4 Blinkern zurück.&nbsp;</P></TD>
+          <TD><IMG height=119 src="Game_of_Life-Dateien/game16.gif" 
+          width=232></TD></TR></TBODY></TABLE>
+      <HR width="100%" SIZE=1>
+      <BR>Die folgenden Beispiele haben interessante und zum Teil lange 
+      Geschichten. Darauf weisen die Namen hin. 
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD>
+            <CENTER><IMG height=61 src="Game_of_Life-Dateien/game17.gif" 
+            width=371></CENTER></TD></TR></TBODY></TABLE>
+      <HR width="100%" SIZE=1>
+      <BR>Es ist faszinierend, welche Populationen aus Hunderten von Lebewesen 
+      man sich&nbsp; schon ausgedacht hat. Aus Grundfiguren werden komplizierte 
+      Arrangements zusammengestellt. Es kommt zu vielfältigen und skurrilen 
+      Bewegungsabläufen.&nbsp; <BR>
+      <HR width="100%" SIZE=3>
+
+      <P><A name="Selbstgemachte Populationen"></A><B>Selbstgemachte 
+      Populationen </B><FONT color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+      <BR><FONT color=#000000>"Es gibt nichts Gutes, außer man tut es." Es 
+      genügt, auf der Eingabeoberfläche zu kritzeln. Daraus entwickeln sich 
+      unvorhersagbare Populationen.&nbsp;</FONT> 
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD>
+            <CENTER><IMG height=390 src="Game_of_Life-Dateien/game18.gif" 
+            width=511></CENTER></TD></TR></TBODY></TABLE>
+      <HR width="100%" SIZE=1>
+
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD><FONT color=#ffffff>...<IMG height=30 
+            src="Game_of_Life-Dateien/game19.gif" width=31>...</FONT></TD>
+          <TD>Gibt man eine symmetrische Figur vor, so bleibt die Symmetrie in 
+            allen nachfolgenden Generationen erhalten. Dadurch ist sie zu jeder 
+            Phase ansehnlich. Manchmal hat man Glück: Wenn man zu Beginn eine 
+            Population in Form eines Fensters (links) aussetzt, verlassen vier 
+            Gleiter die Mitte. Rechts der Moment der Geburt der vier Gleiter!</TD>
+          <TD><FONT color=#ffffff>..<IMG height=56 
+            src="Game_of_Life-Dateien/game20.gif" width=64 
+          border=0>....</FONT></TD></TR></TBODY></TABLE>
+      <HR width="100%" SIZE=3>
+
+      <P><A name="Game of Life im Internet"></A><B>Game of Life im Internet 
+      </B><FONT color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+      <BR>(eine zufällige Auswahl, alphabetisch geordnet) 
+      <P>In Deutsch: 
+      <P><A 
+      href="http://www2.informatik.uni-erlangen.de/IMMD-II/Lehre/SS99/NaturAlgorithmen/Presentations/07.CAsSelfReplication/WWW/Life.html">Andreas 
+      Ehrencrona&nbsp;</A> <BR>&nbsp;- Game of Life - Online 
+      <P><FONT color=#000000><A 
+      href="http://www.sts.tu-harburg.de/~ax.wienberg/life/">Axel 
+      Rasmus</A></FONT> <BR><FONT color=#000000>&nbsp;- Applet für das Game of 
+      Life</FONT> 
+      <P><FONT color=#000000><A 
+      href="http://www.heise.de/tp/deutsch/special/vag/6040/2.html">Heise 
+      online</A></FONT> <BR><FONT color=#000000>&nbsp;- Aufsatz: Das Lebensspiel 
+      und andere Gitterautomaten</FONT> 
+      <P><FONT color=#000000><A 
+      href="http://home.t-online.de/home/Joachim.Frey/game/gol.htm">Joachim 
+      Frey</A></FONT> <BR><FONT color=#000000>&nbsp;- Spielregeln, Aufgaben, 
+      Links</FONT> 
+      <P><FONT color=#000000><A 
+      href="http://www.tu-harburg.de/fsrw/zartbitter/zeitung1099/seite90.htm">Ronald 
+      Poppe</A></FONT> <BR><FONT color=#000000>&nbsp;- Aufsatz: Und daraus 
+      entsteht Leben!</FONT> <BR>
+      <HR width="100%" SIZE=1>
+      <BR>In Englisch: 
+      <P><FONT color=#000000><A 
+      href="http://www.mindspring.com/~alanh/life/">Alan Hensel</A></FONT> 
+      <BR><FONT color=#000000>&nbsp;- Applet mit vielen 
+      Populationen&nbsp;</FONT> <BR><FONT color=#000000>&nbsp;- Sammlung von 
+      Programmen, fast 200 Populationen unter lifep.zip für life32</FONT> 
+      <P><A 
+      href="http://www.pentadecathlon.com/LifeInfo/LifeInfo.html">HKoenig</A> 
+      <BR><FONT color=#000000>- LifeInfo, umfangreiche Homepage über Conway's 
+      Game of Life&nbsp;</FONT> 
+      <P><FONT color=#000000><A 
+      href="http://psoup.math.wisc.edu/Life32.html">Johan G. Bontes</A></FONT> 
+      <BR><FONT color=#000000>&nbsp;- umfangreiches und leistungsfähiges 
+      Programm life32, Herunterladen möglich</FONT> 
+      <P><FONT color=#000000><A href="http://www.whimsey.com/Life.html">John 
+      Saeger</A></FONT> <BR><FONT color=#000000>&nbsp;- einfaches und 
+      übersichtliches Programm für Einsteiger, Herunterladen möglich</FONT> 
+      <P><A href="http://home.interserv.com/~mniemiec/lifepage.htm">Mark D. 
+      Niemiec</A> <BR>&nbsp;- viele Informationen über Conway's Game of Life 
+      <P><FONT color=#000000><A 
+      href="http://www.cs.jhu.edu/~callahan/lifepage.html">Paul 
+      Callahan</A></FONT> <BR><FONT color=#000000>&nbsp;- umfangreiche Homepage 
+      über Conway's Game of Life&nbsp;</FONT> <BR><FONT color=#000000>&nbsp;- 
+      ein einführender Aufsatz unter <A 
+      href="http://www.math.com/students/wonders/life/life.html">Wonders of 
+      Maths</A></FONT> <BR>
+      <HR width="100%" SIZE=3>
+
+      <P><A name=Kommentar></A><B><FONT color=#000000>Kommentar</FONT> </B><FONT 
+      color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT> 
+      <BR><FONT color=#000000>Ich bin nach 20 Jahren wieder auf "Game of Life" 
+      gestoßen. Es ist erstaunlich, welche Entwicklung diese Spielerei (mit 
+      einem wissenschaftlichem Ursprung) bis zu den heutigen schnellen Computern 
+      genommen hat. Auch gibt das Internet jetzt Informationen preis, die mir 
+      früher nicht zugänglich waren. Ich habe das Gefühl, eine Tür aufgemacht 
+      und nur hineingeschaut zu haben.&nbsp;</FONT> <BR>
+      <HR width="100%" SIZE=3>
+
+      <CENTER><A href="mailto:jkoeller@gmx.de">feedback</A> 
+      <P><FONT face="Comic Sans MS"><FONT color=#000000><FONT size=-1>Diese 
+      Webseite ist bald in Englisch vorhanden.</FONT></FONT></FONT> 
+      <P><FONT face="Comic Sans MS"><FONT color=#000000><FONT size=-1>URL meiner 
+      Homepage:</FONT></FONT></FONT> <BR><FONT face="Comic Sans MS"><FONT 
+      color=#000000><FONT size=-1><A 
+      href="http://www.mathematische-basteleien.de/index.htm">http://www.mathematische-basteleien.de/index.htm</A></FONT></FONT></FONT> 
+      <BR><FONT face="Comic Sans MS"><FONT color=#000000><FONT 
+      size=-1>früher:</FONT></FONT></FONT> <BR><STRIKE><FONT 
+      face="Comic Sans MS"><FONT color=#00cc00><FONT 
+      size=-1>http://mitglied.lycos.de/jkoeller/</FONT></FONT></FONT></STRIKE> 
+      <P><FONT face="Comic Sans MS"><FONT color=#009900>©&nbsp;<FONT size=-1> 
+      Jürgen Köller</FONT></FONT></FONT></CENTER><FONT color=#000000><A 
+      href="http://www.mathematische-basteleien.de/gameoflife.htm#top">top</A></FONT></P></TD></TR></TBODY></TABLE></CENTER><BR>&nbsp; 
+<BR>&nbsp; <BR>&nbsp; <BR>&nbsp; </BODY></HTML>
