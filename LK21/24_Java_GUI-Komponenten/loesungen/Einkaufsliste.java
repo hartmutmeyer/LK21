@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,16 +9,16 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.ListSelectionModel;
 
 public class Einkaufsliste extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField tfNeuerEintrag;
-	private DefaultListModel<String> einkaufsliste = new DefaultListModel<String>();
-	private JList<String> listEinkaeufe = new JList<String>(einkaufsliste);
+	private DefaultListModel<String> einkaeufe = new DefaultListModel<String>();
+	private JList<String> listEinkaeufe = new JList<String>(einkaeufe);
 
 	/**
 	 * Launch the application.
@@ -40,61 +41,95 @@ public class Einkaufsliste extends JFrame {
 	 */
 	public Einkaufsliste() {
 		createGUI();
+		testDatenErzeugen();
+	}
+
+	private void testDatenErzeugen() {
+		einkaeufe.addElement("Conrad Elektronic: Fernseher");
+		einkaeufe.addElement("Conrad Elektronic: Handy");
+		einkaeufe.addElement("IKEA: Stuhl");
+		einkaeufe.addElement("Dänisches Bettenlager: Matratze");
+		einkaeufe.addElement("Conrad Elektronic: Drohne");
+		einkaeufe.addElement("Kiosk: IKEA-Katalog");
+		einkaeufe.addElement("IKEA: Spiegel");
 	}
 
 	private void createGUI() {
-		setTitle("Einkaufliste");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 505, 348);
+		setBounds(100, 100, 483, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		tfNeuerEintrag = new JTextField();
 		tfNeuerEintrag.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				hinzufuegen();
 			}
 		});
-		tfNeuerEintrag.setBounds(10, 11, 305, 20);
+		tfNeuerEintrag.setBounds(10, 11, 315, 20);
 		contentPane.add(tfNeuerEintrag);
 		tfNeuerEintrag.setColumns(10);
-		
-		JButton btnHinzufuegen = new JButton("Hinzufügen");
-		btnHinzufuegen.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+
+		JButton btnHinzufügen = new JButton("Hinzufügen");
+		btnHinzufügen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				hinzufuegen();
 			}
 		});
-		btnHinzufuegen.setBounds(327, 9, 158, 23);
-		contentPane.add(btnHinzufuegen);
-		
+		btnHinzufügen.setBounds(335, 10, 122, 23);
+		contentPane.add(btnHinzufügen);
+
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 42, 475, 230);
+		scrollPane.setBounds(10, 44, 447, 180);
 		contentPane.add(scrollPane);
+
 		listEinkaeufe.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		
 		scrollPane.setViewportView(listEinkaeufe);
-		
-		JButton btnEintragLoeschen = new JButton("Eintrag Löschen");
-		btnEintragLoeschen.addActionListener(new ActionListener() {
+
+		JButton btnLoeschen = new JButton("Alle Einträge von diesem Geschäft entfernen");
+		btnLoeschen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				loeschen();
 			}
 		});
-		btnEintragLoeschen.setBounds(327, 284, 158, 23);
-		contentPane.add(btnEintragLoeschen);
-		setResizable(false);
+		btnLoeschen.setBounds(10, 227, 447, 23);
+		contentPane.add(btnLoeschen);
 	}
 
-	private void loeschen() {
-		einkaufsliste.remove(listEinkaeufe.getSelectedIndex());
+	private String getGeschaeft(String eintrag) {
+		// System.out.println("Das Geschäft heißt Lidl");
+		int indexOfDoppelpunkt = eintrag.indexOf(':');
+		String geschaeft = eintrag.substring(0, indexOfDoppelpunkt);
+		return geschaeft;
 	}
 
-	private void hinzufuegen() {
-		einkaufsliste.addElement(tfNeuerEintrag.getText());
+	protected void hinzufuegen() {
+		einkaeufe.addElement(tfNeuerEintrag.getText());
 		tfNeuerEintrag.setText("");
-		tfNeuerEintrag.requestFocusInWindow();
 	}
+
+	protected void loeschen() {
+		int index = listEinkaeufe.getSelectedIndex();
+		if (index != -1) {
+			String eintrag = listEinkaeufe.getSelectedValue();
+			if (eintrag.indexOf(':') == -1) {
+				einkaeufe.remove(listEinkaeufe.getSelectedIndex());
+			} else {
+				String geschaeft = getGeschaeft(eintrag);
+				System.out.println("loeschen(): Ausgewählter Eintrag: " + eintrag);
+				for (int i = 0; i < einkaeufe.size(); i++) {
+					String element = einkaeufe.getElementAt(i);
+					System.out.println("loeschen(): Element = " + element);
+					if (getGeschaeft(element).equals(geschaeft)) {
+						einkaeufe.remove(i);
+						System.out.println("loeschen(): Eintrag gelöscht: " + i);
+						i--;
+					}
+				}
+			}
+		}
+	}
+
 }
