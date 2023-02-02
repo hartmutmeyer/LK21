@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<XmlStateMachines version="KaraX 1.0 multikara">
+  <XmlStateMachine startState="fahre" actor="Xara">
+    <XmlState x="355.0" y="142.0" finalstate="true" name="Stop">
+      <XmlDescription/>
+      <XmlSensors/></XmlState>
+    <XmlState x="213.0" y="142.0" finalstate="false" name="fahre">
+      <XmlDescription/>
+      <XmlSensors>
+        <XmlSensor name="1023801502921"/>
+        <XmlSensor name="1023801525890"/>
+        <XmlSensor name="1023801534999"/></XmlSensors></XmlState>
+    <XmlTransition from="fahre" to="fahre">
+      <XmlSensorValues>
+        <XmlSensorValue value="1" name="1023801502921"/>
+        <XmlSensorValue value="0" name="1023801525890"/>
+        <XmlSensorValue value="0" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands>
+        <XmlCommand name="move"/></XmlCommands></XmlTransition>
+    <XmlTransition from="fahre" to="fahre">
+      <XmlSensorValues>
+        <XmlSensorValue value="2" name="1023801502921"/>
+        <XmlSensorValue value="1" name="1023801525890"/>
+        <XmlSensorValue value="0" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands>
+        <XmlCommand name="turnRight"/>
+        <XmlCommand name="move"/></XmlCommands></XmlTransition>
+    <XmlTransition from="fahre" to="fahre">
+      <XmlSensorValues>
+        <XmlSensorValue value="2" name="1023801502921"/>
+        <XmlSensorValue value="2" name="1023801525890"/>
+        <XmlSensorValue value="1" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands>
+        <XmlCommand name="turnLeft"/>
+        <XmlCommand name="move"/></XmlCommands></XmlTransition>
+    <XmlTransition from="fahre" to="Stop">
+      <XmlSensorValues>
+        <XmlSensorValue value="2" name="1023801502921"/>
+        <XmlSensorValue value="2" name="1023801525890"/>
+        <XmlSensorValue value="2" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands/></XmlTransition></XmlStateMachine>
+  <XmlStateMachine startState="fahre" actor="Dara">
+    <XmlState x="355.0" y="142.0" finalstate="true" name="Stop">
+      <XmlDescription/>
+      <XmlSensors/></XmlState>
+    <XmlState x="213.0" y="142.0" finalstate="false" name="fahre">
+      <XmlDescription/>
+      <XmlSensors>
+        <XmlSensor name="1023801502921"/>
+        <XmlSensor name="1023801525890"/>
+        <XmlSensor name="1023801534999"/></XmlSensors></XmlState>
+    <XmlTransition from="fahre" to="fahre">
+      <XmlSensorValues>
+        <XmlSensorValue value="1" name="1023801502921"/>
+        <XmlSensorValue value="0" name="1023801525890"/>
+        <XmlSensorValue value="0" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands>
+        <XmlCommand name="move"/></XmlCommands></XmlTransition>
+    <XmlTransition from="fahre" to="fahre">
+      <XmlSensorValues>
+        <XmlSensorValue value="2" name="1023801502921"/>
+        <XmlSensorValue value="1" name="1023801525890"/>
+        <XmlSensorValue value="0" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands>
+        <XmlCommand name="turnRight"/>
+        <XmlCommand name="move"/></XmlCommands></XmlTransition>
+    <XmlTransition from="fahre" to="fahre">
+      <XmlSensorValues>
+        <XmlSensorValue value="2" name="1023801502921"/>
+        <XmlSensorValue value="2" name="1023801525890"/>
+        <XmlSensorValue value="1" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands>
+        <XmlCommand name="turnLeft"/>
+        <XmlCommand name="move"/></XmlCommands></XmlTransition>
+    <XmlTransition from="fahre" to="Stop">
+      <XmlSensorValues>
+        <XmlSensorValue value="2" name="1023801502921"/>
+        <XmlSensorValue value="2" name="1023801525890"/>
+        <XmlSensorValue value="2" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands/></XmlTransition></XmlStateMachine>
+  <XmlStateMachine startState="fahre" actor="Tara">
+    <XmlState x="213.0" y="142.0" finalstate="false" name="fahre">
+      <XmlDescription/>
+      <XmlSensors>
+        <XmlSensor name="1023801502921"/>
+        <XmlSensor name="1023801525890"/>
+        <XmlSensor name="1023801534999"/></XmlSensors></XmlState>
+    <XmlState x="355.0" y="142.0" finalstate="true" name="Stop">
+      <XmlDescription/>
+      <XmlSensors/></XmlState>
+    <XmlTransition from="fahre" to="fahre">
+      <XmlSensorValues>
+        <XmlSensorValue value="1" name="1023801502921"/>
+        <XmlSensorValue value="0" name="1023801525890"/>
+        <XmlSensorValue value="0" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands>
+        <XmlCommand name="move"/></XmlCommands></XmlTransition>
+    <XmlTransition from="fahre" to="fahre">
+      <XmlSensorValues>
+        <XmlSensorValue value="2" name="1023801502921"/>
+        <XmlSensorValue value="1" name="1023801525890"/>
+        <XmlSensorValue value="0" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands>
+        <XmlCommand name="turnRight"/>
+        <XmlCommand name="move"/></XmlCommands></XmlTransition>
+    <XmlTransition from="fahre" to="fahre">
+      <XmlSensorValues>
+        <XmlSensorValue value="2" name="1023801502921"/>
+        <XmlSensorValue value="2" name="1023801525890"/>
+        <XmlSensorValue value="1" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands>
+        <XmlCommand name="turnLeft"/>
+        <XmlCommand name="move"/></XmlCommands></XmlTransition>
+    <XmlTransition from="fahre" to="Stop">
+      <XmlSensorValues>
+        <XmlSensorValue value="2" name="1023801502921"/>
+        <XmlSensorValue value="2" name="1023801525890"/>
+        <XmlSensorValue value="2" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands/></XmlTransition></XmlStateMachine>
+  <XmlStateMachine startState="fahre" actor="Lara">
+    <XmlState x="213.0" y="142.0" finalstate="false" name="fahre">
+      <XmlDescription/>
+      <XmlSensors>
+        <XmlSensor name="1023801502921"/>
+        <XmlSensor name="1023801525890"/>
+        <XmlSensor name="1023801534999"/></XmlSensors></XmlState>
+    <XmlState x="355.0" y="142.0" finalstate="true" name="Stop">
+      <XmlDescription/>
+      <XmlSensors/></XmlState>
+    <XmlTransition from="fahre" to="fahre">
+      <XmlSensorValues>
+        <XmlSensorValue value="1" name="1023801502921"/>
+        <XmlSensorValue value="0" name="1023801525890"/>
+        <XmlSensorValue value="0" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands>
+        <XmlCommand name="move"/></XmlCommands></XmlTransition>
+    <XmlTransition from="fahre" to="fahre">
+      <XmlSensorValues>
+        <XmlSensorValue value="2" name="1023801502921"/>
+        <XmlSensorValue value="1" name="1023801525890"/>
+        <XmlSensorValue value="0" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands>
+        <XmlCommand name="turnRight"/>
+        <XmlCommand name="move"/></XmlCommands></XmlTransition>
+    <XmlTransition from="fahre" to="fahre">
+      <XmlSensorValues>
+        <XmlSensorValue value="2" name="1023801502921"/>
+        <XmlSensorValue value="2" name="1023801525890"/>
+        <XmlSensorValue value="1" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands>
+        <XmlCommand name="turnLeft"/>
+        <XmlCommand name="move"/></XmlCommands></XmlTransition>
+    <XmlTransition from="fahre" to="Stop">
+      <XmlSensorValues>
+        <XmlSensorValue value="2" name="1023801502921"/>
+        <XmlSensorValue value="2" name="1023801525890"/>
+        <XmlSensorValue value="2" name="1023801534999"/></XmlSensorValues>
+      <XmlCommands/></XmlTransition></XmlStateMachine>
+  <XmlSensorDefinition identifier="treeFront" name="extendedWorldSensor" description="Baum vorne?" parameterString="0,1,1,0"/>
+  <XmlSensorDefinition identifier="treeLeft" name="extendedWorldSensor" description="Baum links?" parameterString="-1,0,1,0"/>
+  <XmlSensorDefinition identifier="treeRight" name="extendedWorldSensor" description="Baum rechts?" parameterString="1,0,1,0"/>
+  <XmlSensorDefinition identifier="onLeaf" name="extendedWorldSensor" description="Kleeblatt unten?" parameterString="0,0,2,0"/>
+  <XmlSensorDefinition identifier="mushroomFront" name="extendedWorldSensor" description="Pilz vorne?" parameterString="0,1,4,0"/>
+  <XmlSensorDefinition identifier="karainfront" name="extendedWorldSensor" description="Kara vorne?" parameterString="0,1,8,0"/>
+  <XmlSensorDefinition identifier="1023801502921" name="extendedWorldSensor" description="vorwärts" parameterString="0,1,16,1"/>
+  <XmlSensorDefinition identifier="1023801525890" name="extendedWorldSensor" description="rechts" parameterString="1,0,16,8"/>
+  <XmlSensorDefinition identifier="1023801534999" name="extendedWorldSensor" description="links" parameterString="-1,0,16,2"/></XmlStateMachines>
