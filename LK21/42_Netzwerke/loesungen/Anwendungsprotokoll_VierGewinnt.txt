@@ -1,0 +1,21 @@
+          CLIENT                                 SERVER
+          
+                                <--          #AR!  bzw. #BG!    (Spieler A, Rot bzw. Spieler B Gelb)
+  #A6!  (Rot in 6. Spalte)      -->
+                                <--          #A6!               (Gelb erfährt den gegnerischen Zug)
+                                <--          #AV!               (Nachricht an beide Clients: Sieger A)
+  #BA!  (Spieler B gibt auf)    -->
+                                <--          #BA!               (Nachricht an den Mitspieler)
+  #N!   (Neues Spiel gewünscht) -->
+  #16!Abitur bestanden          --> 
+                                <--          #16!Abitur bestanden (Chat-Nachricht an anderen Client weiter reichen)
+                                                              
+                                
+Anmerkungen:
+1. Falls keine Nachricht über den Gewinner zwischen Client und Server ausgetauscht wird:
+   Der Spielstand wird von Client und Server bewertet. Ob und wer gewonnen hat muss deshalb nicht über
+   das Anwendungsprotokoll kommuniziert werden.
+2. Zum Chat-Protokoll:
+   Alle Ziffern zwischen '#' und '!' werden als Zahl interpretiert und stehen für die Anzahl von folgenden
+   Zeichen, die die eigentliche Chat-Nachricht bilden. Auf diese Weise kann sichergestellt werden,
+   dass die Chat-Nachricht nicht "interpretiert" (im Sinne des Anwendungsprotokolls) wird.

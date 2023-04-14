@@ -1,0 +1,28 @@
+          CLIENT                SERVER
+          
+                         <--     #RA!        (Das Spiel wird gestartet und du bist Spieler A)
+           #RA!          -->                 (Spieler A ist bereit)
+           #A?F4!        -->                 (Spieler A schießt auf Feld F4)                    
+                         <--     #A?F4!      (Server meldet an den anderen Client worauf gezielt wurde)
+           #BT-!         -->                 (Spieler B meldet kein Treffer)
+           #BT0!         -->                 (Spieler B meldet Treffer, nicht versenkt)
+           #BT+!         -->                 (Spieler B meldet Treffer, versenkt)
+                         <--     #BT-! / #BT0! / #BT+     (Server reicht Ergebnis an den anderen Client weiter)
+           #AFF!         -->                 (Spieler A gibt auf)       
+                         <--     #AFF!       (Spieler A gibt auf)       
+           #AR!          -->                 (Spieler A bitte um Revanche)
+                         <--     #AR!        (Spieler B wird über den Revanche-Wunsch von A informiert)
+           #BR+!         -->                 (Spieler B willigt der Revanche ein)
+           #BR-!         -->                 (Spieler B lehnt die Revanche ab)  
+           #AC<10>...!   -->                 (Spieler A sendet Nachricht "..." mit zehn Zeichen Länge an Spieler B)
+                         <--     #AC<10>...! (Server leitet Nachricht von A an B weiter)
+                                     
+
+                                
+ANNAHMEN ZUR BENUTZEROBERFLÄCHE
+- Der Server verbindet zwei spielbereite Spieler (Clients) miteinander
+- Der Server kennt nicht die Positionen von Spieler A und B - diese sind nur den Clients bekannt
+- die gesamte Spiellogik (Spielregeln) ist in den Clients implementiert. Der Server muss das Spiel nicht verstehen. 
+- Ein Spieler (Client) kann vorzeitig aufgeben
+- Es soll eine Chat-Möglichkeit geben.
+
