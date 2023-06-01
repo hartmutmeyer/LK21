@@ -1,0 +1,149 @@
+2a)
+
+abteilungsname       abteilung_i vorname              nachname             
+-------------------- ----------- -------------------- -------------------- 
+Research                       5 Franklin             Wong                 
+Headquarters                   1 James                Borg                 
+Administration                 4 Jennifer             Wallace              
+Number of rows returned: 3
+Query executed in 15 ms.
+
+
+2b)
+
+vorname              nachname             vorname              nachname             g verwandt 
+-------------------- -------------------- -------------------- -------------------- - -------- 
+Ahmad                Jabbar               <null>               <null>               < <null>   
+Alicia               Zelaya               <null>               <null>               < <null>   
+Franklin             Wong                 Alice                Wong                 w Tochter  
+Franklin             Wong                 Joy                  Wong                 w Ehegatte 
+Franklin             Wong                 Theodore             Wong                 m Sohn     
+James                Borg                 <null>               <null>               < <null>   
+Jennifer             Wallace              Abner                Wallace              m Ehegatte 
+John                 Smith                Alice                Goldman              w Tochter  
+John                 Smith                Elizabeth            Smith                w Ehegatte 
+John                 Smith                Michael              Smith                m Sohn     
+Joyce                English              <null>               <null>               < <null>   
+Ramesh               Narayan              <null>               <null>               < <null>   
+Number of rows returned: 12
+Query executed in 2 ms.
+
+
+2c)
+
+vorname              nachname             
+-------------------- -------------------- 
+James                Borg                 
+Number of rows returned: 1
+Query executed in 2 ms.
+
+
+2d)
+
+             COUNT(*) 
+--------------------- 
+                    6 
+Number of rows returned: 1
+Query executed in 1 ms.
+
+
+2e)
+
+nachname             vorname              projektname           projekt_id 
+-------------------- -------------------- -------------------- ----------- 
+Borg                 James                Reorganization                20 
+English              Joyce                ProductY                       2 
+English              Joyce                ProductX                       1 
+Jabbar               Ahmad                Computerization               10 
+Jabbar               Ahmad                Newbenefits                   30 
+Narayan              Ramesh               ProductZ                       3 
+Smith                John                 ProductX                       1 
+Smith                John                 ProductY                       2 
+Wallace              Jennifer             Reorganization                20 
+Wallace              Jennifer             Newbenefits                   30 
+Wong                 Franklin             ProductY                       2 
+Wong                 Franklin             Computerization               10 
+Wong                 Franklin             Reorganization                20 
+Wong                 Franklin             ProductZ                       3 
+Zelaya               Alicia               Newbenefits                   30 
+Zelaya               Alicia               Computerization               10 
+Number of rows returned: 16
+Query executed in 2 ms.
+
+
+2f)
+
+vorname              nachname             geburtstag g 
+-------------------- -------------------- ---------- - 
+Jennifer             Wallace              1941-06-20 w 
+Ahmad                Jabbar               1969-03-29 m 
+Alicia               Zelaya               1968-07-19 w 
+Number of rows returned: 3
+Query executed in 1 ms.
+
+
+2g)
+
+vorname              nachname             
+-------------------- -------------------- 
+James                Borg                 
+Number of rows returned: 1
+Query executed in 1 ms.
+
+
+2h)
+
+             COUNT(*) 
+--------------------- 
+                    3 
+Number of rows returned: 1
+Query executed in 0 ms.
+
+
+2i)
+
+ortsname             
+-------------------- 
+Bellaire             
+Houston              
+Stafford             
+Sugarland            
+Number of rows returned: 4
+Query executed in 1 ms.
+
+
+2j)
+
+vorname              nachname                          COUNT(*) 
+-------------------- -------------------- --------------------- 
+James                Borg                                     1 
+Joyce                English                                  2 
+Ahmad                Jabbar                                   2 
+Ramesh               Narayan                                  1 
+John                 Smith                                    2 
+Jennifer             Wallace                                  2 
+Franklin             Wong                                     4 
+Alicia               Zelaya                                   2 
+Number of rows returned: 8
+Query executed in 1 ms.
+
+
+2k)
+
+projektname          
+-------------------- 
+Computerization      
+Number of rows returned: 1
+Query executed in 1 ms.
+
+
+2l)
+
+vorname              nachname             angestellte 
+-------------------- -------------------- ----------- 
+John                 Smith                  123456789 
+Franklin             Wong                   333445555 
+Number of rows returned: 2
+Query executed in 1 ms.
+
+overall execution time 75 ms
