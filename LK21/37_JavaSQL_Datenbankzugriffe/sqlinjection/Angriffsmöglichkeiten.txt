@@ -1,0 +1,11 @@
+Im Anmelde-Dialog:
+
+Kontonummer: "12345678#", Passwort: ""
+Kontonummer: "12345678", Passwort: "' or 1=1#"
+Kontonummer: "(SELECT kontonummer FROM konto WHERE konto_id=1)#", Passwort: ""
+Kontonummer: "12345678", Passwort: "' ORDER BY 7#" --> unbekannter Kunde oder falsches Passwort
+Kontonummer: "12345678", Passwort: "' ORDER BY 8#" --> unknown column '8' in order clause
+
+
+Im Passwort-Ändern-Dialog:
+Neues Passwort: "1234', kontostand = 1000.00, vorname = 'Evil"
