@@ -27,6 +27,7 @@ public class FahrzeugeHinzufuegen extends JFrame {
 	private JTextField textFieldFarbe;
 	private JTextField textFieldBaujahr;
 	private Connection conn;
+	private Statement stmt;
 
 	/**
 	 * Launch the application.
@@ -49,7 +50,12 @@ public class FahrzeugeHinzufuegen extends JFrame {
 	 * Create the frame.
 	 */
 	public FahrzeugeHinzufuegen() {
-		super("Fahrzeuge Hinzufügen");
+		createGUI();
+		datenbankOeffnen();
+	}
+
+	private void createGUI() {
+		setTitle("Fahrzeuge Hinzufügen");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 295, 202);
 		contentPane = new JPanel();
@@ -109,70 +115,47 @@ public class FahrzeugeHinzufuegen extends JFrame {
 				datenbankFahrzeugHinzufuegen();
 			}
 		});
-		contentPane.add(btnFahrzeugHinzufgen, BorderLayout.SOUTH);
-
-		datenbankOeffnen();
-	}
-
-	public void datenbankFahrzeugHinzufuegen() {
-		int ergebnis = 0;
-		boolean kfzZeichenNochNichtVergeben = false;
-		String cmdSQL;
-		Statement stmt;
-		ResultSet rs = null;
-
-		cmdSQL = "SELECT kfz_zeichen FROM fahrzeughalter WHERE kfz_zeichen='"
-				+ textFieldKFZKennzeichen.getText()
-				+ "' AND abgemeldet IS NULL";
-		System.out.println(cmdSQL);
-		try {
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(cmdSQL);
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-		}
-
-		try {
-			rs.beforeFirst();
-			if (rs.next()) {
-				JOptionPane.showMessageDialog(this, "Es gibt bereits ein angemeldetes Fahrzeug mit diesem KFZ-Zeichen!");
-			} else {
-				kfzZeichenNochNichtVergeben = true;
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-		}
-
-		if (kfzZeichenNochNichtVergeben) {
-			cmdSQL = "INSERT INTO fahrzeug VALUES ('"
-					+ textFieldKFZKennzeichen.getText() + "','"
-					+ textFieldTyp.getText() + "','" + textFieldFarbe.getText()
-					+ "'," + textFieldBaujahr.getText() + ")";
-
-			System.out.println(cmdSQL);
-
-			try {
-				stmt = conn.createStatement();
-				ergebnis = stmt.executeUpdate(cmdSQL);
-			} catch (SQLException e) {
-				System.out.println(e.getMessage());
-				e.printStackTrace();
-			}
-			if (ergebnis == 1) {
-				JOptionPane.showMessageDialog(this, "Das Fahrzeug mit dem KFZ-Zeichen "
-								+ textFieldKFZKennzeichen.getText()
-								+ " wurde hinzugefügt.");
-			} else {
-				System.out.println("Es gibt bereits ein angemeldetes Fahrzeug mit diesem KFZ-Zeichen!");
-			}
-		}
+		contentPane.add(btnFahrzeugHinzufgen, BorderLayout.SOUTH);		
 	}
 
 	private void datenbankOeffnen() {
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost/fahrzeuge?serverTimezone=UTC&useSSL=false", "root", "root");
+			stmt = conn.createStatement();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+
+	public void datenbankFahrzeugHinzufuegen() {
+		int ergebnis;
+		String sql;
+		ResultSet rs;
+
+		sql = "SELECT kfz_zeichen FROM fahrzeughalter WHERE kfz_zeichen = '"
+				+ textFieldKFZKennzeichen.getText()
+				+ "' AND abgemeldet IS NULL";
+		System.out.println(sql);
+		try {
+			rs = stmt.executeQuery(sql);
+			if (rs.next()) {
+				JOptionPane.showMessageDialog(this, "Es gibt bereits ein angemeldetes Fahrzeug mit diesem KFZ-Zeichen!");
+			} else {
+				sql = "INSERT INTO fahrzeug VALUES ('"
+						+ textFieldKFZKennzeichen.getText() + "','"
+						+ textFieldTyp.getText() + "','" + textFieldFarbe.getText()
+						+ "'," + textFieldBaujahr.getText() + ")";
+				System.out.println(sql);
+				ergebnis = stmt.executeUpdate(sql);
+				if (ergebnis == 1) {
+					JOptionPane.showMessageDialog(this, "Das Fahrzeug mit dem KFZ-Zeichen "
+									+ textFieldKFZKennzeichen.getText()
+									+ " wurde hinzugefügt.");
+				} else {
+					System.out.println("Fehler beim Hinzufügen des Fahrzeugs!");
+				}
+			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
